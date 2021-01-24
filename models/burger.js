@@ -7,23 +7,17 @@ const burger = {
         });
     },
 
-    insertOne: function (burger_name, cb) {
-        orm.insertOne('burgers', 'burger_name', burger_name, function (res) {
+    insertOne: function (values, cb) {
+        orm.insertOne('burgers', ['burger_name'], values, function (res) {
             cb(res);
         });
     },
 
-    updateOne: function (burger_id, cb) {
-        orm.updateOne('burgers', 'devoured', true, burger_id, function (res) {
+    updateOne: function (condition, cb) {
+        orm.updateOne('burgers', 'devoured=true', condition, function (res) {
             cb(res)
         });
     },
-
-    restoreOne: function (burger_id, cb) {
-        orm.updateOne('burgers', 'devoured', false, burger_id, function (res) {
-            cb(res)
-        });
-    }
 };
 
 module.exports = burger;
