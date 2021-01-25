@@ -8,7 +8,8 @@
             {{#unless this.devoured}}
             
               <div class="input-group my-4">
-                <li class="form-control">{{id}}. {{burger_name}}</li> <button class="btn btn-success devour-button ml-3" data-id="{{id}}" type="submit">Devour It!</button>  
+                <li class="form-control">{{id}}. {{burger_name}}</li> 
+                <button class="btn btn-success devour-button ml-3" data-id="{{id}}" type="submit">Devour It!</button>  
               </div>
             
             {{/unless}}
@@ -25,7 +26,7 @@
           {{#each burgers}}
             {{#if this.devoured}}
               <div class="input-group my-4">
-                <li class="form-control">{{this.id}}. {{this.burger_name}}</li><button class="btn btn-success restore-button ml-3" data-id="{{id}}" type="submit">Restore</button>
+                <li class="form-control">{{this.id}}. {{this.burger_name}}</li><button class="btn btn-success restore-button ml-3" onclick="insertOne()" data-id="{{id}}" type="submit">Restore</button>
               </div>
             {{/if}}
           {{/each}}
